@@ -1,4 +1,4 @@
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper, 10pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -10,7 +10,11 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
 \usepackage{tabularx}
+\usepackage{soul}
 \input{glyphtounicode}
+
+% Set underlining to be closer to text
+\setul{1pt}{.4pt}
 
 % Set the margins to be .5 inches
 \usepackage[margin=0.5in]{geometry}
@@ -49,13 +53,13 @@
 		$\cdot$
 		\href{https://github.com/404wolf}{github.com/404Wolf}
 	\end{center}
-	\vspace{-9px}
+	\vspace{-12px}
 	
 	\section{Education}
 	\resumeSubHeadingListStart
-	\resumeSubheading
+	\twoLineResumeSubheading
 	{Case Western Reserve University}{Cleveland, OH}{}
-	{B.S. Computer Science; No GPA yet.}{Anticipated 2027}{Relevant courses: Data Structures, Logic Design \& Computer Organization}
+	{B.S. Computer Science; No GPA yet.}{Anticipated 2027}{\textbf{Relevant courses:} Data Structures, Logic Design \& Computer Organization}{\textbf{Experience:} Tabletop Empire (board game club) Vice President, Student Gov. IT Working Group member}
 	
 	\resumeSubheading
 	{Bard Early College}{Queens, NY}{}
@@ -118,8 +122,8 @@
 	
 	\section{Projects}
 	\resumeSubHeadingListStart
-		\resumeSubItem{DNA Nanotube Designer Tool}
-		{Academic research project involving creating an interactive application for designing geometrically constrained DNA nanotubes. Engaged in weekly collaborative debugging \& planning meetings with a bionanotechnologist, self-taught advanced Python and the PyQt framework, and derived, utilized, and implemented various important algorithms. Currently working on scholarly paper related to project.}
+		\resumeSubItem{DNA Nanotube Designer Tool (``NATuG'')}
+		{DNA nanotechnology academic research project wherein I developed an interactive Python based desktop application with the QT framework aimed to streamline the geometrically constrained DNA nanotube design process. Engaged in weekly collaborative debugging \& planning meetings with a bionanotechnologist, implementing and designing various important algorithms such as one to compute DNA helix strand switch behavior on junction clicks. Designed custom csv-zip package file format. Carefully architected UI to be both intuitive and accessible, but also powerful. Currently working on scholarly paper related to project. For more on NATuG, see \href{https://404wolf.com/posts/projects/DNANanotubes}{\ul{my website post}}, or the \href{https://github.com/NATuG3/NATuG3}{\ul{Github}}.}
 		
 		\resumeSubItem{Hydroponic Closet Basil Farm}
 		{Renovated closet and installed hydroponic equipment (upcycled storage containers, powerful grow lights, commercial air compressors, etc.). Harvested and pruned 18 large hydroponic large-leaf basil plants weekly. Maintained 100 gallons of aerated nutrient water. Formulated recipes for and produced bulk pesto.}
@@ -129,9 +133,7 @@
 	\resumeSubHeadingListStart
 		\resumeSubItem{Languages}{Fluent English \& Ancient Latin learner. Python, Typescript, Javascript, Java, HTML \& CSS, Markdown \& \LaTeX, learning Verilog}
 	
-		\resumeSubItem{Frameworks}{React, Tailwind, NextJS \& NextAuth, Numpy \& Pandas, Prisma, Django, PyQt \& PyQtGraph, DiscordPy, Asyncio, Remark \& Rehype}
-	
-		\resumeSubItem{Tools}{Git Version Control, AWS S3, CockroachDB, Adobe Illustrator \& Photoshop, GSuit \& Microsoft Office}
+		\resumeSubItem{Tools}{React, Tailwind, NextJS \& NextAuth, Numpy \& Pandas, Prisma, Django, PyQt \& PyQtGraph, DiscordPy, Asyncio, Remark \& Rehype, Git Version Control, AWS S3, CockroachDB, Adobe Illustrator \& Photoshop, GSuit \& Microsoft Office}
 	
 		\resumeSubItem{Miscellaneous}{Object-oriented, Web development, Backend, REST, 95+ WPM Typing, CPR Certified (2022)}
 	
