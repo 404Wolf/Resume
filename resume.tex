@@ -1,5 +1,6 @@
 \documentclass[letterpaper, 10pt]{article}
 
+\usepackage{etoolbox}
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -36,10 +37,10 @@
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-% Load in the custom resume commands
-\include{utils}
-
 \begin{document}
+	% Load in the custom resume commands
+	\include{utils}
+	
 	\begin{center}
 		\textbf{\Huge \scshape \href{https://404wolf.com}{Wolf Mermelstein}} \\ \vspace{12pt}
 		
@@ -57,20 +58,23 @@
 	
 	\section{Education}
 	\resumeSubHeadingListStart
+	
 	\twoLineResumeSubheading
 	{Case Western Reserve University}{Cleveland, OH}{}
-	{B.S. Computer Science; No GPA yet.}{Anticipated 2027}{\textbf{Relevant courses:} Data Structures, Logic Design \& Computer Organization}{\textbf{Experience:} Tabletop Empire (board game club) Vice President, Student Gov. IT Working Group member}
+	{B.S. Computer Science; 4.00 GPA}{Anticipated 2027}{\textbf{Relevant courses:} Data Structures, Logic Design \& Computer Organization}{\textbf{Experience:} Tabletop Empire (board game club) Vice President, Student Gov. IT Working Group member}
+	
+	\vspace{.01in}
 	
 	\resumeSubheading
 	{Bard Early College}{Queens, NY}{}
-	{Associates of Arts;  GPA: 4.00}{Sep. 2021 - June 2023}{}
+	{Associates of Arts;  4.00 GPA}{Sep. 2021 - June 2023}{}
 	\resumeSubHeadingListEnd
 	
 	\section{Awards}
 	\resumeSubHeadingListStart
 		\resumeSubItem[]{Case Western ThinkBox Student Project Fund (\$630)}{\rightInfo{October 2023}}
 	
-		\resumeSubItem[]{High School Departmental Nanoscience and Ancient Latin awards}{\rightInfo{May 2023}}
+		\resumeSubItem[]{Bard High School Early College Departmental Nanoscience and Ancient Latin awards}{\rightInfo{May 2023}}
 	
 		\resumeSubItem[]{Microsoft Bug Hunter Acknowledgment}{\rightInfo{March 2022}}
 		
