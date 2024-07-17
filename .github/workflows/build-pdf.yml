@@ -18,6 +18,10 @@ jobs:
           git add resume.pdf
           git commit -m "Update resume.pdf"
           git push origin main
+      - name: Set up Git user info
+        run: |
+          git config --local user.name "github-actions[bot]" 
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
       - name: "Commit and push changes"
         uses: "ad-m/github-push-action@v0.6.0"
         with:
