@@ -11,13 +11,10 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
       - name: Build PDF
         run: "nix build"
-      - name: Run a bash command
+      - name: Copy and stage the PDF
         run: |
           cp result/share/resume.pdf resume.pdf
           rm -r result
-      - name: Commit and push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          commit_message: "Update PDF"
-          branch: main
+          git add resume.pdf
+          git commit -m "Update resume.pdf"
+          git push origin main
