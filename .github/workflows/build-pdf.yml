@@ -18,3 +18,9 @@ jobs:
           git add resume.pdf
           git commit -m "Update resume.pdf"
           git push origin main
+      - name: "Commit and push changes"
+        uses: "ad-m/github-push-action@v0.6.0"
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          commit_message: "Update resume.pdf"
+          branch: main
