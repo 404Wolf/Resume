@@ -2,20 +2,25 @@
   pkgs,
   src,
   name,
+  suppressErrors ? true,
   document ? "document.tex",
   texlive ? pkgs.texlive,
   texpkgs ? { },
   lastModified ? 0,
-  ...
 }:
 let
   tex = texlive.combine ({ inherit (pkgs.texlive) scheme-basic latex-bin latexmk; } // texpkgs);
 in
 pkgs.stdenvNoCC.mkDerivation {
   inherit name src;
-  dontUnpack = true;
+  phases = [
+    "unpackPhase"
+    "buildPhase"
+    "installPhase"
+  ];
   buildPhase = ''
     mkdir -p .cache/texmf-var
+    export TEXINPUTS=$TEXINPUTS:$(pwd)/stys:
     export TEXMFHOME=.cache TEXMFVAR=.cache/texmf-var
     export SOURCE_DATE_EPOCH=${toString lastModified} # Ensure date is pure
     ${tex}/bin/latexmk \
@@ -24,10 +29,12 @@ pkgs.stdenvNoCC.mkDerivation {
       -usepretex \
       -jobname=${name} \
       -pdflua \
-      ${document}
+      -cd "src/${document}" ${if suppressErrors then "|| true" else ""}
   '';
   installPhase = ''
-    mkdir -p $out
-    cp document.pdf $out/${name}.pdf
+    mkdir -p $out/share
+    mkdir -p $out/logs
+    cp src/*.pdf $out/share
+    cp src/* $out/logs
   '';
 }

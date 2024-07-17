@@ -27,11 +27,21 @@
         packages = {
           default = buildLatexDocument {
             inherit name;
-            src = self;
-            document = "src/resume.tex";
+            src = ./.;
+            document = "resume.tex";
             lastModified = self.lastModified;
-            texPkgs = {
-              inherit (pkgs.texlive) etoolbox;
+            texpkgs = {
+              inherit (pkgs.texlive)
+                etoolbox
+                hvfloat
+                marvosym
+                enumitem
+                amsmath
+                spverbatim
+                fancyhdr
+                soulpos
+                preprint
+                ;
             };
           };
         };

@@ -1,0 +1,14 @@
+name: Build resume PDF
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Nix
+        uses: "cachix/install-nix-action@v17"
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - name: Build PDF
+        run: "nix build"
+
