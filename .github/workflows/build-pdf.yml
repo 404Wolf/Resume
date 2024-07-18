@@ -6,22 +6,28 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-            token: ${{ secrets.GAT }}
-      - name: "Install Nix"
+          token: ${{ secrets.GAT }}
+      - name: "Install Nix Package Manager"
         uses: "cachix/install-nix-action@v17"
         with:
           nix_path: nixpkgs=channel:nixos-unstable
-      - name: "Build PDF"
+      - name: "Build Resume PDF"
         run: "nix build"
       - name: Copy and stage the PDF
         run: |
           cp result/share/resume.pdf resume.pdf
           rm -r result
-      - name: "Set up Git user info"
+      - name: "Update Github Repo"
         run: |
           git config --local user.name "github-actions[bot]" 
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add resume.pdf
           git commit -am "Update resume.pdf"
           git push
+      - name: "Push to 404wolf.com"
+        run: |
+          curl -X PUT -T resume.pdf \
+            $(curl -X POST "https://404wolf.com/api/resume" -H "secret: $WOLF_API_SECRET" -s | jq '.link')
+        env:
+          WOLF_API_SECRET: ${{ secrets.WOLF_API_SECRET }}
 

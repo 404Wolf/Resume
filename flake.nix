@@ -20,11 +20,10 @@
       let
         name = "resume";
         pkgs = import nixpkgs { inherit system; };
-        # buildLatexDocument = latex-utils.lib.${system}.buildLatexDocument;
         buildLatexDocument = pkgs.callPackage ./package.nix;
       in
       {
-        packages = {
+        packages = rec {
           default = buildLatexDocument {
             inherit name;
             src = ./.;
@@ -44,8 +43,17 @@
                 ;
             };
           };
+          develop = pkgs.writeShellScriptBin "develop" ''
+            function build {
+              nix build --out-link tmp
+              cp tmp/share/resume.pdf resume.pdf
+              rm -r tmp
+            }
+            export -f build
+            ENTR=${pkgs.entr}/bin/entr
+            find . -type f -name '*.tex' | $ENTR sh -c build
+          '';
         };
-        devShells = { };
       }
     );
 }
