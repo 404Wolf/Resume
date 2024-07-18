@@ -15,9 +15,6 @@ jobs:
         run: |
           cp result/share/resume.pdf resume.pdf
           rm -r result
-          git add resume.pdf
-          git commit -m "Update resume.pdf"
-          git push origin main
       - name: Set up Git user info
         run: |
           git config --local user.name "github-actions[bot]" 
