@@ -1,7 +1,7 @@
 name: Build resume PDF
 on: [push]
 jobs:
-  Bulild and Deploy Resume:
+  build-deploy-resume:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
