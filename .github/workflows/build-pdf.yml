@@ -1,7 +1,7 @@
 name: Build resume PDF
 on: [push]
 jobs:
-  check-bats-version:
+  Bulild and Deploy Resume:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -26,7 +26,8 @@ jobs:
           git push
       - name: "Push to 404wolf.com"
         run: |
-          UPLOAD_URL=$(curl -X POST "https://404wolf.com/api/resume" -H "secret: $WOLF_API_SECRET" -s | jq '.link')
+          UPLOAD_URL=$(curl -X POST "https://404wolf.com/api/resume" -H "secret: ${{ secrets.WOLF_API_SECRET }}" -s 
+            \ | jq '.link')
           curl -X PUT -T resume.pdf $UPLOAD_URL
         env:
           WOLF_API_SECRET: ${{ secrets.WOLF_API_SECRET }}
