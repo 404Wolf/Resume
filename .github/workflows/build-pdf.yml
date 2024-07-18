@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+            token: ${{ secrets.GAT }}
       - name: "Install Nix"
         uses: "cachix/install-nix-action@v17"
         with:
@@ -20,6 +22,6 @@ jobs:
           git config --local user.name "github-actions[bot]" 
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git add resume.pdf
-          git commit -m "Update resume.pdf"
+          git commit -am "Update resume.pdf"
           git push
 
