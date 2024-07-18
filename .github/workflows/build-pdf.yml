@@ -27,6 +27,7 @@ jobs:
       - name: "Push to 404wolf.com"
         run: |
           echo "Fetching upload URL..."
+          echo $WOLF_API_SECRET
           UPLOAD_URL=$(curl -X POST "https://404wolf.com/api/resume" -H "secret: $WOLF_API_SECRET" -s | jq -r '.link')
           echo "Upload URL: $UPLOAD_URL"
           echo "Uploading file..."
