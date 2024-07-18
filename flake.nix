@@ -11,8 +11,8 @@
     {
       self,
       nixpkgs,
-      latex-utils,
       flake-utils,
+      latex-utils,
       ...
     }:
     flake-utils.lib.eachDefaultSystem (
@@ -20,11 +20,10 @@
       let
         name = "resume";
         pkgs = import nixpkgs { inherit system; };
-        buildLatexDocument = pkgs.callPackage ./package.nix;
       in
       {
-        packages = rec {
-          default = buildLatexDocument {
+        packages = {
+          default = latex-utils.lib.${system}.buildLatexDocument {
             inherit name;
             src = ./.;
             document = "resume.tex";
@@ -43,17 +42,8 @@
                 ;
             };
           };
-          develop = pkgs.writeShellScriptBin "develop" ''
-            function build {
-              nix build --out-link tmp
-              cp tmp/share/resume.pdf resume.pdf
-              rm -r tmp
-            }
-            export -f build
-            ENTR=${pkgs.entr}/bin/entr
-            find . -type f -name '*.tex' | $ENTR sh -c build
-          '';
         };
+        devShells.default = latex-utils.devShells.${system}.default;
       }
     );
 }

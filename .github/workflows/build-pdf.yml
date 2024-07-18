@@ -3,6 +3,7 @@ on: [push]
 jobs:
   build-deploy-resume:
     runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
     steps:
       - uses: actions/checkout@v3
         with:
@@ -31,6 +32,6 @@ jobs:
           UPLOAD_URL=$(curl -X POST "https://404wolf.com/api/resume" -H "secret: $WOLF_API_SECRET" -s | jq -r '.link')
           echo "Upload URL: $UPLOAD_URL"
           echo "Uploading file..."
-          curl -X PUT -T resume.pdf "$UPLOAD_URL"
+          curl -X PUT -T resume.pdf "$UPLOAD_URL" -H "Content-Type: application/pdf"
         env:
           WOLF_API_SECRET: ${{ secrets.WOLF_API_SECRET }}
