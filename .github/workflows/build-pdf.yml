@@ -26,8 +26,10 @@ jobs:
           git push
       - name: "Push to 404wolf.com"
         run: |
+          echo "Fetching upload URL..."
           UPLOAD_URL=$(curl -X POST "https://404wolf.com/api/resume" -H "secret: $WOLF_API_SECRET" -s | jq -r '.link')
+          echo "Upload URL: $UPLOAD_URL"
+          echo "Uploading file..."
           curl -X PUT -T resume.pdf "$UPLOAD_URL"
         env:
           WOLF_API_SECRET: ${{ secrets.WOLF_API_SECRET }}
-
