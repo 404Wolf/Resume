@@ -3,6 +3,7 @@
 
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
+.env
 *.aux
 *.lof
 *.log
