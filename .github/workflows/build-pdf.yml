@@ -18,13 +18,13 @@ jobs:
         run: |
           cp result/share/resume.pdf resume.pdf
           rm -r result
-      - name: "Update Github Repo"
-        run: |
-          git config --local user.name "github-actions[bot]" 
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git add resume.pdf
-          git commit -am "Update resume.pdf"
-          git push
+      # - name: "Update Github Repo"
+      #   run: |
+      #     git config --local user.name "github-actions[bot]" 
+      #     git config --local user.email "github-actions[bot]@users.noreply.github.com"
+      #     git add resume.pdf
+      #     git commit -am "Update resume.pdf"
+      #     git push
       - name: "Push to 404wolf.com"
         run: |
           echo "Fetching upload URL..."
