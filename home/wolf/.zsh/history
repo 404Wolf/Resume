@@ -1,5 +1,0 @@
-: 1721592080:0;nix develop
-: 1721592157:0;pwd | copy
-: 1721592210:0;rm resume.pdf
-: 1721592215:0;nix develop
-: 1721592299:0;gaa
