@@ -4,21 +4,14 @@
 	}
 }
 
-% Headings that aren't in a list
-\newcommand{\resumeHeading}[4]{
-	\begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
-		\textbf{#1} & #2 \\
-		\textit{\small#3} & \textit{\small #4} \\
-	\end{tabular*}\vspace{-5pt}
-}
-
 \newcommand{\resumeSubheading}[6]{
 	\vspace{-3pt}\item
 	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
 		\textbf{#1} & #2 \\
 		\textit{\small#4} & \textit{\small #5} \\
 	    \ifstrempty{#6}{}{\textit{\small#6} & \\}
-	\end{tabular*}\vspace{-5pt}
+    \vspace{-3pt}
+	\end{tabular*}\vspace{-17pt}
 }
 
 \newcommand{\resumeSubSubheading}[2]{
@@ -27,7 +20,7 @@
 	\end{tabular*}\vspace{-5pt}
 }
 
-\newcommand{\resumeSubItem}[3][: ]{\resumeItem[#1]{\vspace{-3pt}#2}{#3}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[3][: ]{\resumeItem[#1]{\vspace{-1pt}#2}{#3}\vspace{-5pt}}
 
 \newcommand{\rightInfo}[1]{\hfill \textit{#1}}
 
