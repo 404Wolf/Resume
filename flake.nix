@@ -7,21 +7,18 @@
     latex-utils.url = "github:404Wolf/nixlatexdocument";
   };
 
-  outputs =
-    {
-      self,
-      nixpkgs,
-      flake-utils,
-      latex-utils,
-      ...
-    }:
+  outputs = {
+    self,
+    nixpkgs,
+    flake-utils,
+    latex-utils,
+    ...
+  }:
     flake-utils.lib.eachDefaultSystem (
-      system:
-      let
+      system: let
         name = "resume";
-        pkgs = import nixpkgs { inherit system; };
-      in
-      {
+        pkgs = import nixpkgs {inherit system;};
+      in rec {
         packages = {
           default = latex-utils.lib.${system}.buildLatexDocument {
             inherit name;
@@ -29,7 +26,8 @@
             document = "resume.tex";
             lastModified = self.lastModified;
             texpkgs = {
-              inherit (pkgs.texlive)
+              inherit
+                (pkgs.texlive)
                 etoolbox
                 hvfloat
                 marvosym
@@ -43,7 +41,13 @@
             };
           };
         };
-        devShells.default = latex-utils.devShells.${system}.default;
+        devShells.default = pkgs.mkShell {
+          packages = with pkgs; [
+            evince
+            entr
+          ];
+          inputsFrom = [packages.default];
+        };
       }
     );
 }
