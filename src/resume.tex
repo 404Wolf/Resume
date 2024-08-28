@@ -1,4 +1,5 @@
 \newcommand{\pdfglyphtounicode}[2]{}
+\newcommand{\chref}[2]{\smash{\textcolor{blue}{\href{#1}{#2}}}}
 \documentclass[letterpaper, 10pt]{article}
 
 \usepackage{etoolbox}
@@ -62,7 +63,7 @@
 \resumeSubHeadingListStart
 \resumeSubheading
 {Case Western Reserve University}{Cleveland, OH}
-{B.S. Computer Science; 4.00 GPA}{\textbf{Relevant courses:} Data Structures, Logic Design, Linux Tools/Scripting, Accounting/Corporate Finance}{Anticipated 2027}{\textbf{Experience:} Tabletop Empire (board game club) Vice President, Student Gov. IT Working Group member}
+{B.S. Computer Science; 4.00 GPA}{\textbf{Relevant courses:} Data Structures, Linux Tools/Scripting, Logic Design, Accounting/Corporate Finance}{Anticipated 2027}{\textbf{Experience:} Tabletop Empire (board game club) Vice President, Student Gov. IT Working Group member}
 
 \vspace{3pt}
 
@@ -88,63 +89,66 @@
 \section{Experience}
 \resumeSubHeadingListStart
 
+\urlstyle{tt}
+
 \resumeSubheading
 {Recurse Center}{Brooklyn-based self-led coding retreat}{Brooklyn, NY \& Remote}
 {Participant}{June 2023 - August 2023; June 2024 - August 2024}{}
 \resumeItemListStart
 \resumeItem{Personal Website}
-{Designed website with TS/TSX, React, \& tailwind. Implemented custom post editing system with Postgresql, Prisma ORM, and AWS S3 to store/fetch/render posts. Wrote backup and migration scripts in TS. Created special markdown parsing system with custom Rehype plugins. Wrote Obsidian plugin to sync/edit blogs.}
+{Designed website with TS/TSX, React, \& tailwind. Implemented custom post editing system with Postgres/Prisma-ORM \& AWS S3 to store/fetch/render posts. Wrote backup and migration scripts in TS. Created special markdown parsing system with custom Rehype plugins. Wrote Obsidian plugin to sync/edit blogs.}
 
 \resumeItem{NixOS \& Nix Builds}
-{Contributed to \href{https://github.com/NixOS/nixpkgs}{nixpkgs}. Configured NixOS desktop system from scratch w/Hyprland, home-manager, and other extensive customizations. Learned Nix language/how to package binaries and apps of various kinds. Working on project to package Android emulators with Nix and stream over WebRTC.}
+{Contributed to \href{https://github.com/NixOS/nixpkgs}{nixpkgs}. Configured NixOS desktop system from scratch w/Hyprland, home-manager, and other extensive customizations. Learned Nix language/packaging binaries \& various programs. Working on project to dockerize Android emulators with Nix docker tools.}
 
 \resumeItem{Generated Vocab Cards}
-{Created Python Django server merge data obtained through Webster, OpenAI, and other APIs into elegant, contained English Vocab flashcard PDFs. Created system to generate vector art utilizing templated SVGs and Chrome Devtools Protocol.}
+{Created Python Django server to merge Webster, OpenAI, and other API data into elegant English Vocab flashcard PDFs. Made system to generate vector art using template SVGs and Chrome Devtools Protocol.}
 \resumeItemListEnd
 
 \resumeSubheading
 {Brooklyn Robot Foundry}{Robotics afterschool \& summer camp franchise}{Brooklyn, NY \& Remote}
 {Design Team Member; Teacher}{July 2020 - June 2023}{}
+
 \resumeItemListStart
 \resumeItem{Design system overhaul}
-{Crafted dynamic presentation templates and inventory management systems for designers \& teachers, improving robot kit creation process. Educated staff on how to use the new materials.}
+{Crafted dynamic presentation templates and inventory management systems for designers \& teachers, improving robot kit creation process. Educated staff on using the materials.}
 
-\resumeItem{Curriculum Design}
-{Developed novel `inventors' curriculum fostering open-ended exploration, with 40+ unique lessons, taught to 10-12 year olds throughout the country \& created content for astronomy `Science Lab' course with thorough, interactive lessons for 6-9 year olds.}
-
-\resumeItem{Teaching}{Lead-taught virtual robot-building summer classes to groups of 5-12 8-13 year olds. Co-taught in person classes and robot birthdays. Helped run extended day sessions.}
+\resumeItem{Curriculum Design \& Teaching}
+{Developed novel `inventors' curriculum fostering open-ended exploration with 40+ unique lessons, taught to 10-12 year olds throughout the country \& created content for astronomy `Science Lab' course w/thorough, interactive lessons for 6-9 yr olds. Taught classes, including my curricula, to groups of 5-12 8-13 year olds.}
 \resumeItemListEnd
 
 \resumeSubheading
 {Minecraft Name Autoclaiming}{Online self-run business}{Remote}
 {Co-founder; Solo Software Engineer; Sales Manager}{June 2021 - July 2022}{}
 \resumeItemListStart
-\resumeItem{Systems Design}
-{Developed software in Python to autoclaim desirable Minecraft usernames at the moment of release, beating competitors by milliseconds. Automated server deployment and account distribution for 50-80 accounts.}
+\resumeItem{Software Engineer}
+{Developed system w/Python to autoclaim desirable Minecraft usernames at moment of release. Automated server deployment and account distribution for 50-80 accounts. Implemented automatic name queue, server-setup scripts, AioHTTP Swagger-Spec'ed management server, and admin interface. Utilized Vultr API for server deployment and AsyncSSH for auth \& SFTP.}
 
 \resumeItem{Sales Management}
 {Facilitated sales process and auctions for over 100 buyers, generating \$6,000+ in revenue with around 200 unique accounts sold. Maintained consistently positive customer feedback and regular reorders.}
-
-\resumeItem{Software Engineer}
-{Implemented automatic name queue, contrived server-setup Python scripts, coded AioHTTP Swagger-Spec'ed management server, and created interactive Discord bots. Utilized Vultr's API for automated server deployment and AsyncSSH for auth \& SFTP.}
 \resumeItemListEnd
 
 \resumeSubHeadingListEnd
 
 \section{Projects}
 \resumeSubHeadingListStart
-\resumeSubItem{DNA Nanotube Designer Tool (``NATuG'')}
-{DNA nanotechnology academic research project. Developed interactive PY-qt desktop app to streamline the geometrically constrained DNA nanotube design process. ngaged Collaborated w/bionanotechnologist to design important algorithms such computing DNA helix strand switch behavior on junction clicks. Engineered custom export file format. Currently working on scholarly paper. For more see \href{https://404wolf.com/posts/projects/DNANanotubes}{\ul{my website post}}, or \href{https://github.com/NATuG3/NATuG3}{\ul{Github}}.}
+\resumeSubItem{DNA Nanotube Designer Tool (``NATuG'') (\chref{https://404wolf.com/posts/project/DNANanotubes}{blog}, \chref{https://github.com/NATuG3/NATuG3}{code})}
+{DNA nanotechnology academic research project. Developed interactive PY-QT desktop app to streamline geometrically constrained DNA nanotube design process. Collaborated w/bionanotechnologist to design important algorithms, e.g. DNA helix strand switch behavior on junction clicks. Designed export file format. Began working on scholarly paper}
 
-\resumeSubItem{Andoird Event App}
-{Android event planning application. Includes a MongoDB database and customized login system, and various event displays. Implemented a commenting system and event map views. Learned about Android CLI tool ecosystem and emulators.}
+\resumeSubItem{Coin Sorting Bot (\chref{https://404wolf.com/posts/project/coinSortBot}{blog}, \chref{https://github.com/orgs/Coin-Sort-Bot/repositories}{code})}{Robot to sort coins by date. 3D printed body with mechanism that sends coins down chute to photo them and deflect into canisters. Django/S3 backend for processing.}
+
+\resumeSubItem{Android in the Browser (\chref{https://404wolf.com/posts/project/androidBrowser}{blog}, \chref{https://github.com/404Wolf/Browser-Phone}{code})}
+{Developed toolchain to stream Android to browsers over WebRTC w/Janus Gateway for low-latency video stream. Using Nix for Android packaging, React for frontend, Bun for APIs, and Android development tools. Goal is interactive Android in browser w/simple React components.}
+
+\resumeSubItem{CWRU Food Finder (\chref{https://404wolf.com/posts/project/freeCwruFood}{blog}, \chref{https://free-cwru-food.404wolf.com/}{demo}, \chref{https://free-cwru-food.404wolf.com/}{code})}
+{Website using fine-tuned OpenAI model w/Google Cloud Run \& MongoDB automated workflow to scrape on-campus events \& categorize by free food. Includes MUI/React/NextJS frontend. Uses puppeteer to scrape additional event details. 2023 1st place university hackathon project.}
 \resumeSubHeadingListEnd
 
 \section{Skills}
 \resumeSubHeadingListStart
-\resumeSubItem{Languages}{Fluent English \& Ancient Latin learner. Python, Typescript, Javascript, Java, Bash, Nix, HTML \& CSS, Markdown \& \LaTeX, Typst, Lua, Awk, learning Verilog}
+\resumeSubItem{Languages}{Fluent English \& Ancient Latin learner. Python, Typescript, Javascript, Java, Bash, Nix, HTML \& CSS, Markdown \& \LaTeX, Typst, Lua, Awk, learning Verilog, learning C/C++}
 
-\resumeSubItem{Tools}{Nix \& NixOS, Linux, React, Tailwind, Mui, Docker, NextJS \& NextAuth, Numpy \& Pandas, Prisma, Django, PyQt \& PyQtGraph, Asyncio, Unified/Remark \& Rehype, Git, S3, AWS, Fusion 360, Janus Gateway \& WebRTC, Adobe Illustrator \& Photoshop, GSuit \& MS Office, Vim, JQ, CLI tooling}
+\resumeSubItem{Tools}{Nix \& NixOS, Linux, Docker, NextJS \& NextAuth, Numpy \& Pandas, Prisma, Django, PyQt \& PyQtGraph, Asyncio, Unified/Remark \& Rehype, Git, S3, AWS, Fusion 360, Janus Gateway \& WebRTC, React/React Native, Tailwind, Mui, Adobe Illustrator \& Photoshop, GSuit \& MS Office, Vim, JQ, CLI tooling}
 
 \resumeSubItem{Miscellaneous}{Object-oriented, functional, Web development, 110+ WPM Typing, CPR Certified (2022)}
 
