@@ -1,3 +1,4 @@
+\renewcommand{\small}{\fontsize{8pt}{8pt}\selectfont}
 \newcommand{\pdfglyphtounicode}[2]{}
 \newcommand{\chref}[2]{\smash{\textcolor{blue}{\href{#1}{#2}}}}
 \documentclass[letterpaper, 10pt]{article}
@@ -61,23 +62,20 @@
 
 \section{Education}
 \resumeSubHeadingListStart
-\resumeSubheading
+\resumeSubheadingCompact
 {Case Western Reserve University}{Cleveland, OH}
-{B.S. Computer Science; 4.00 GPA}{\textbf{Relevant courses:} Data Structures, Linux Tools/Scripting, Logic Design, Accounting/Corporate Finance}{Anticipated 2027}{\textbf{Experience:} Tabletop Empire (board game club) Vice President, Student Gov. IT Working Group member}
+{B.S. Computer Science; 4.00 GPA}{Anticipated 2026}{\textbf{Relevant courses:} Data Structures, Linux Tools/Scripting; Taking Networks, Algo, OS, Corporate Finance}{\textbf{Experience:} \href{https://case.edu/entrepreneurship/fellowships/veale-snyder-fellows-program}{\textcolor{blue}{Veale Snyder Fellow} (entrepreneurship program)}, Board Game Club VP, former IT working group}
 
-\vspace{3pt}
+\vspace{3.5pt}
 
-\resumeSubheading
-{Bard Early College}{Queens, NY}{}
-{Associates of Arts;  4.00 GPA}{Sep. 2021 - June 2023}{}
+\resumeSubheadingCompact
+{Bard Early College}{Queens, NY}
+{Associates of Arts;  4.00 GPA}{Sep. 2021 - June 2023}{}{}
 \resumeSubHeadingListEnd
-
-\vspace{-7pt}
 
 \section{Awards \& Honors}
 \resumeSubHeadingListStart
 
-\resumeSubItem[]{\href{https://case.edu/entrepreneurship/fellowships/veale-snyder-fellows-program}{Veale Snyder Fellow}}{\rightInfo{August 2024}}
 \resumeSubItem[]{HackCWRU (University Hackathon) First Place}{\rightInfo{February 2024}}
 \resumeSubItem[]{Case Western ThinkBox Student Project Fund (\$630)}{\rightInfo{October 2023}}
 \resumeSubItem[]{Bard High School Early College Departmental Nanoscience and Ancient Latin awards}{\rightInfo{May 2023}}
@@ -89,14 +87,12 @@
 \section{Experience}
 \resumeSubHeadingListStart
 
-\urlstyle{tt}
-
 \resumeSubheading
-{Recurse Center}{Brooklyn-based self-led coding retreat}{Brooklyn, NY \& Remote}
-{Participant}{June 2023 - August 2023; June 2024 - August 2024}{}
+{Recurse Center}{Brooklyn-based self-led coding retreat}{June 2023 - August 2023; June 2024 - August 2024; NYC \& Remote}
+{Participant}{}{}
 \resumeItemListStart
 \resumeItem{Personal Website}
-{Designed website with TS/TSX, React, \& tailwind. Implemented custom post editing system with Postgres/Prisma-ORM \& AWS S3 to store/fetch/render posts. Wrote backup and migration scripts in TS. Created special markdown parsing system with custom Rehype plugins. Wrote Obsidian plugin to sync/edit blogs.}
+{Designed website with TS/TSX, React, \& tailwind. Implemented custom post editing system with Postgres/Prisma-ORM \& S3 to store/fetch/render posts (w/REST CRUD). Wrote (TS) backup and migration scripts. Created special markdown parsing system with custom Rehype plugins. Wrote Obsidian plugin to sync/edit blogs.}
 
 \resumeItem{NixOS \& Nix Builds}
 {Contributed to \href{https://github.com/NixOS/nixpkgs}{nixpkgs}. Configured NixOS desktop system from scratch w/Hyprland, home-manager, and other extensive customizations. Learned Nix language/packaging binaries \& various programs. Working on project to dockerize Android emulators with Nix docker tools.}
@@ -106,8 +102,8 @@
 \resumeItemListEnd
 
 \resumeSubheading
-{Brooklyn Robot Foundry}{Robotics afterschool \& summer camp franchise}{Brooklyn, NY \& Remote}
-{Design Team Member; Teacher}{July 2020 - June 2023}{}
+{Brooklyn Robot Foundry}{Robotics afterschool \& summer camp franchise}{July 2020 - June 2023; NYC \& Remote}
+{Design Team; Teacher}{}{}
 
 \resumeItemListStart
 \resumeItem{Design system overhaul}
@@ -118,8 +114,8 @@
 \resumeItemListEnd
 
 \resumeSubheading
-{Minecraft Name Autoclaiming}{Online self-run business}{Remote}
-{Co-founder; Solo Software Engineer; Sales Manager}{June 2021 - July 2022}{}
+{Minecraft Name Autoclaiming}{Online self-run business}{June 2021 - July 2022; Remote}
+{Co-founder; Solo Software Engineer; Sales Manager}{}{}
 \resumeItemListStart
 \resumeItem{Software Engineer}
 {Developed system w/Python to autoclaim desirable Minecraft usernames at moment of release. Automated server deployment and account distribution for 50-80 accounts. Implemented automatic name queue, server-setup scripts, AioHTTP Swagger-Spec'ed management server, and admin interface. Utilized Vultr API for server deployment and AsyncSSH for auth \& SFTP.}
@@ -130,10 +126,12 @@
 
 \resumeSubHeadingListEnd
 
+\vspace{-16pt}
+
 \section{Projects}
 \resumeSubHeadingListStart
-\resumeSubItem{DNA Nanotube Designer Tool (``NATuG'') (\chref{https://404wolf.com/posts/project/DNANanotubes}{blog}, \chref{https://github.com/NATuG3/NATuG3}{code})}
-{DNA nanotechnology academic research project. Developed interactive PY-QT desktop app to streamline geometrically constrained DNA nanotube design process. Collaborated w/bionanotechnologist to design important algorithms, e.g. DNA helix strand switch behavior on junction clicks. Designed export file format. Began working on scholarly paper}
+\resumeSubItem{DNA Nanotube Designer Tool (``NATuG'') (\chref{https://404wolf.com/posts/project/DNANanotubes}{blog}, \chref{https://wolf-mermelstein-personal-website.s3.us-east-2.amazonaws.com/programOverview_0001_0001_0001.webm}{demo}, \chref{https://github.com/NATuG3/NATuG3}{code})}
+{DNA nanotechnology academic research project. Developed interactive PY-QT desktop app to streamline geometrically constrained DNA nanotube design. Collaborated w/bionanotechnologist to create important algorithms like determining helix strand switch behavior on junction clicks. Designed export file format. Wrote manual and Began working on scholarly paper.}
 
 \resumeSubItem{Coin Sorting Bot (\chref{https://404wolf.com/posts/project/coinSortBot}{blog}, \chref{https://github.com/orgs/Coin-Sort-Bot/repositories}{code})}{Robot to sort coins by date. 3D printed body with mechanism that sends coins down chute to photo them and deflect into canisters. Django/S3 backend for processing.}
 
@@ -141,7 +139,7 @@
 {Developed toolchain to stream Android to browsers over WebRTC w/Janus Gateway for low-latency video stream. Using Nix for Android packaging, React for frontend, Bun for APIs, and Android development tools. Goal is interactive Android in browser w/simple React components.}
 
 \resumeSubItem{CWRU Food Finder (\chref{https://404wolf.com/posts/project/freeCwruFood}{blog}, \chref{https://free-cwru-food.404wolf.com/}{demo}, \chref{https://free-cwru-food.404wolf.com/}{code})}
-{Website using fine-tuned OpenAI model w/Google Cloud Run \& MongoDB automated workflow to scrape on-campus events \& categorize by free food. Includes MUI/React/NextJS frontend. Uses puppeteer to scrape additional event details. 2023 1st place university hackathon project.}
+{Website using fine-tuned OpenAI model w/Google Cloud Run \& MongoDB automated workflow to scrape on-campus events \& categorize by free food. Includes MUI/React/NextJS frontend. Uses puppeteer to scrape additional event details. 2023 1\textsuperscript{st} place university hackathon project. About 50 visitors/month.}
 \resumeSubHeadingListEnd
 
 \section{Skills}
@@ -150,9 +148,17 @@
 
 \resumeSubItem{Tools}{Nix \& NixOS, Linux, Docker, NextJS \& NextAuth, Numpy \& Pandas, Prisma, Django, PyQt \& PyQtGraph, Asyncio, Unified/Remark \& Rehype, Git, S3, AWS, Fusion 360, Janus Gateway \& WebRTC, React/React Native, Tailwind, Mui, Adobe Illustrator \& Photoshop, GSuit \& MS Office, Vim, JQ, CLI tooling}
 
-\resumeSubItem{Miscellaneous}{Object-oriented, functional, Web development, 110+ WPM Typing, CPR Certified (2022)}
+\resumeSubItem{Miscellaneous}{Object-oriented, functional, Web development, 110+ WPM Typing, CPR Certified (2022). Fast learner, creative, good communicator.}
 
-\resumeSubItem{Qualities}{Fast learner, Creative thinker, Debugging, Efficient, Good Communicator, Reliable \& timely}
 \resumeSubHeadingListEnd
+
+\begin{picture}(0,0)
+	\put(7.82in, -0.29in){\makebox(0,0)[rb]{
+    \fontsize{5pt}{5pt}\selectfont \href{https://github.com/404wolf/resume}{Built with Nix; \textcolor{blue}{Source on GitHub}}
+}}
+\end{picture}
+
+\end{document}
+
 \end{document}
 
