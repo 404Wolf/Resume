@@ -1,6 +1,6 @@
-\renewcommand{\small}{\fontsize{8pt}{8pt}\selectfont}
 \newcommand{\pdfglyphtounicode}[2]{}
 \newcommand{\chref}[2]{\smash{\textcolor{blue}{\href{#1}{#2}}}}
+
 \documentclass[letterpaper, 10pt]{article}
 
 \usepackage{etoolbox}
@@ -91,13 +91,13 @@
 {Recurse Center}{Brooklyn-based self-led coding retreat}{June 2023 - August 2023; June 2024 - August 2024; NYC \& Remote}
 {Participant}{}{}
 \resumeItemListStart
-\resumeItem{Personal Website}
+\resumeItem{Personal Website \tinyblue{(\href{https://404wolf.com}{site}, \href{https://github.com/404wolf/404wolf.com}{code})}}
 {Designed website with TS/TSX, React, \& tailwind. Implemented custom post editing system with Postgres/Prisma-ORM \& S3 to store/fetch/render posts (w/REST CRUD). Wrote (TS) backup and migration scripts. Created special markdown parsing system with custom Rehype plugins. Wrote Obsidian plugin to sync/edit blogs.}
 
 \resumeItem{NixOS \& Nix Builds}
-{Contributed to \href{https://github.com/NixOS/nixpkgs}{nixpkgs}. Configured NixOS desktop system from scratch w/Hyprland, home-manager, and other extensive customizations. Learned Nix language/packaging binaries \& various programs. Working on project to dockerize Android emulators with Nix docker tools.}
+{Contributed to \href{https://github.com/NixOS/nixpkgs}{nixpkgs}. Configured NixOS desktop system from scratch w/Hyprland, home-manager, and other extensive customizations. Learned Nix language/packaging binaries \& various programs. Working on project to dockerize Android emulators with Nix docker tools \tinyblue{\href{https://github.com/404Wolf/android-docker}{(code)}}.}
 
-\resumeItem{Generated Vocab Cards}
+\resumeItem{Generated Vocab Cards \tinyblue{\href{https://github.com/orgs/Logophilio/repositories}{(code)}}}
 {Created Python Django server to merge Webster, OpenAI, and other API data into elegant English Vocab flashcard PDFs. Made system to generate vector art using template SVGs and Chrome Devtools Protocol.}
 \resumeItemListEnd
 
@@ -114,7 +114,7 @@
 \resumeItemListEnd
 
 \resumeSubheading
-{Minecraft Name Autoclaiming}{Online self-run business}{June 2021 - July 2022; Remote}
+{Minecraft Name Autoclaiming \tinyblue{\href{https://github.com/404wolf/ember}{(code)}}}{Online self-run business}{June 2021 - July 2022; Remote}
 {Co-founder; Solo Software Engineer; Sales Manager}{}{}
 \resumeItemListStart
 \resumeItem{Software Engineer}
