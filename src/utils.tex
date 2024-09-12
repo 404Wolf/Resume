@@ -7,7 +7,7 @@
 \newcommand{\resumeSubheadingCompact}[6]{
 	\vspace{-3pt}\item
 	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & \hbox{\hspace{-240pt} \textit{\small#3, #4}; #2} \\
+		\textbf{#1} & \hbox{\hspace{-240pt} \textit{\small#3, #4}; #2} \\
 		\ifstrempty{#5}{}{\textit{\small#5} & \\}
 		\ifstrempty{#6}{}{\textit{\small#6} & \\}
 		\vspace{-3pt}
@@ -18,7 +18,7 @@
 \newcommand{\resumeSubheading}[6]{
 	\vspace{-3pt}\item
 	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-    \textbf{#1} & #2 \\
+		\textbf{#1} & #2 \\
 		\textit{\small#3} & \textit{\small #4} \\
 		\ifstrempty{#5}{}{\textit{\small#5} & \\}
 		\ifstrempty{#6}{}{\textit{\small#6} & \\}
@@ -46,7 +46,8 @@
 
 \newcommand{\pdfglyphtounicode}[2]{}
 
-\newcommand{\chref}[2]{\smash{\textcolor{blue}{\href{#1}{#2}}}}
-
+\newcommand{\chref}[2]{\textcolor{blue}{
+  \href{#1}{#2}
+}}
 \newcommand{\tinyblue}[1]{\fontsize{5pt}{5pt}\selectfont{\textcolor{blue}{#1}}}
 
